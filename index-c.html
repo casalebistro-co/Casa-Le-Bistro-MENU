@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c3d3ec">
+<title>Menú · Casa Le Bistró</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@property --c1{syntax:'<color>';inherits:true;initial-value:#a9cdf5}
+@property --c2{syntax:'<color>';inherits:true;initial-value:#cfe3fb}
+@property --c3{syntax:'<color>';inherits:true;initial-value:#b8c8f0}
+:root{--ink:#1B2A4A;--ink2:rgba(27,42,74,.74);--gold:#C8A96E;--t:'Playfair Display',Georgia,serif;--b:'Mulish',system-ui,sans-serif;--w:min(70vw,290px)}
+body[data-c=e]{--c1:#a9cdf5;--c2:#cfe3fb;--c3:#b8c8f0}body[data-c=h]{--c1:#7fa6e8;--c2:#a7bfe9;--c3:#5f86c9}body[data-c=p]{--c1:#8fd0e3;--c2:#b6e0ee;--c3:#9db9e8}body[data-c=n]{--c1:#a7adf0;--c2:#c9ccf6;--c3:#8fb2ee}body[data-c=l]{--c1:#bfe2f2;--c2:#dbeaf8;--c3:#a9c4ee}body[data-c=k]{--c1:#a3e0e4;--c2:#c9eef0;--c3:#aac7f0}body[data-c=d]{--c1:#c3b4ee;--c2:#ddd3f6;--c3:#a9c0f0}body[data-c=b]{--c1:#6fb4e6;--c2:#9fd0f0;--c3:#6f93d6}body[data-c=a]{--c1:#b2bfd6;--c2:#d3dbea;--c3:#9fb2d8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#9fb3d8;color:var(--ink);font:400 15px/1.5 var(--b);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:-2;transition:--c1 .9s,--c2 .9s,--c3 .9s;background:radial-gradient(60% 42% at 12% 6%,color-mix(in srgb,var(--c1),#1B2A4A 30%),transparent 74%),radial-gradient(55% 40% at 95% 38%,color-mix(in srgb,var(--c2),#1B2A4A 24%),transparent 74%),radial-gradient(80% 55% at 25% 100%,color-mix(in srgb,var(--c3),#1B2A4A 34%),transparent 74%),linear-gradient(180deg,#c3d3ec,#8ea5cf)}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.45;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .1 0 0 0 0 .16 0 0 0 0 .32 0 0 0 .38 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.gl,header,.gp,.sh{background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.78);box-shadow:0 10px 32px rgba(40,70,130,.13),inset 0 1px 0 rgba(255,255,255,.9)}
+header{position:sticky;top:0;z-index:5;border-width:0 0 1px;border-radius:0 0 22px 22px;padding-top:env(safe-area-inset-top)}
+.top{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:8px 16px 0}
+.top img{height:38px;width:auto}
+.lang{display:flex;border-radius:20px;overflow:hidden;border:1px solid rgba(27,42,74,.2)}
+.lang button{background:none;border:0;color:var(--ink);font:700 13px var(--b);padding:6px 14px;cursor:pointer}
+.lang button.on{background:var(--ink);color:#fff}
+nav{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 12px;max-width:980px;margin:0 auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);color:var(--ink);font:700 14px var(--b);padding:8px 16px;border-radius:20px;cursor:pointer;transition:.25s}
+nav button.on{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 6px 16px rgba(27,42,74,.28)}
+button:focus-visible,.gc:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+main{max-width:980px;margin:0 auto;padding:6px 0 40px}
+.hd2{padding:18px 20px 4px}
+.hd2 h1{font:700 36px/1.1 var(--t)}
+.hd2 p{color:var(--ink2);font-size:14px;margin-top:6px;max-width:520px}
+.tools{display:flex;justify-content:flex-end;padding:6px 16px 0}
+.tools .gl{font:700 13px var(--b);color:var(--ink);padding:7px 14px;border-radius:18px;cursor:pointer}
+.rail{position:relative;display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;perspective:900px;padding:18px 0 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail::before,.rail::after{content:"";flex:0 0 calc((100% - var(--w))/2 - 6px)}
+.gc{flex:0 0 var(--w);scroll-snap-align:center;border-radius:30px;padding:9px;cursor:pointer;will-change:transform;transform-origin:center;
+ background:linear-gradient(160deg,rgba(255,255,255,.62),rgba(255,255,255,.34));
+ background:linear-gradient(160deg,color-mix(in srgb,var(--tc) 30%,rgba(255,255,255,.6)),color-mix(in srgb,var(--tc) 12%,rgba(255,255,255,.34)));
+ -webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.8);
+ box-shadow:0 18px 40px color-mix(in srgb,var(--tc) 38%,transparent),inset 0 1px 0 rgba(255,255,255,.9)}
+.ph{position:relative;aspect-ratio:5/4;border-radius:22px;overflow:hidden;background:color-mix(in srgb,var(--tc,#7fa6e8) 40%,#dfe8f6);display:grid;place-items:center}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph b{font:700 28px var(--t);color:var(--ink);opacity:.35}
+.tx{padding:12px 8px 8px}
+.sub{font:700 12px var(--b);color:rgba(27,42,74,.55);margin-bottom:2px}
+.tx h4{font:700 22px/1.15 var(--t)}
+.tag{display:inline-block;margin-top:5px;font:700 12px var(--b);color:#7a5c1e;background:rgba(200,169,110,.28);padding:2px 10px;border-radius:12px}
+.tx p{color:var(--ink2);font-size:13.5px;line-height:1.42;margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pr{display:inline-block;margin-top:10px;font:800 16px var(--b);color:var(--ink);background:rgba(255,255,255,.7);border-radius:20px;padding:4px 14px}
+.pr.m{background:none;padding:0;font-size:14px}.pr.m span{display:inline-block;margin-right:12px}.pr small{font:600 11.5px var(--b);color:rgba(27,42,74,.6);margin-right:4px}
+.nv{display:flex;align-items:center;justify-content:center;gap:18px;font:700 14px var(--b)}
+.nv .gl{width:42px;height:42px;border-radius:50%;font-size:22px;color:var(--ink);cursor:pointer;line-height:1}
+.rail.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;perspective:none;overflow:visible}
+.rail.grid::before,.rail.grid::after{display:none}
+.rail.grid .gc{border-radius:24px;padding:7px}.rail.grid .tx h4{font-size:17px}.rail.grid .tx p{font-size:12.5px}.rail.grid .pr{font-size:14px;padding:3px 11px}.rail.grid .ph{border-radius:18px}
+@media(min-width:760px){.rail.grid{grid-template-columns:repeat(3,1fr)}.rail{padding-top:24px}}
+.rail.grid~.nv{display:none}
+.panels{display:grid;gap:14px;padding:14px 16px 0}
+@media(min-width:760px){.panels{grid-template-columns:1fr 1fr;align-items:start}}
+.gp{border-radius:26px;padding:16px 18px 10px}
+.gp h3{font:700 21px var(--t);margin-bottom:2px}
+.gp .note{color:var(--ink2);font-size:13.5px;margin:2px 0 6px}
+.ex div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(27,42,74,.1)}
+.ex div:last-child{border-bottom:0}
+.ex em{font:800 15px var(--b);font-style:normal;white-space:nowrap}
+.ex small{display:block;color:var(--ink2);font:400 13px/1.35 var(--b);margin-top:1px}
+#md{position:fixed;inset:0;z-index:20;background:rgba(20,35,70,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center}
+#md[hidden]{display:none}
+.sh{position:relative;width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:30px 30px 0 0;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.82)}
+.sh .tx{padding:14px 10px 8px}.sh .tx h4{font-size:26px}.sh .tx p{font-size:15px;display:block}.sh .pr{font-size:18px}.sh .pr.m{font-size:16px}
+.x{position:absolute;top:18px;right:18px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
+footer{text-align:center;color:var(--ink2);font-size:13px;padding:22px 16px 32px}
+@media(prefers-reduced-motion:reduce){.bg{transition:none}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="grain"></div>
+<header>
+  <div class="top"><img src="logo-navy.png" alt="Casa Le Bistró"><div class="lang"><button data-l="es" class="on">ES</button><button data-l="en">EN</button></div></div>
+  <nav id="nav"></nav>
+</header>
+<main id="m"></main>
+<div id="md" hidden></div>
+<footer id="ft"></footer>
+<script>
+const C=[["all","Todo","All"],["e","Entradas","Starters"],["h","Hamburguesas","Burgers"],["p","Pollo y vegetariana","Chicken & veggie"],["n","Paninis","Paninis"],["l","Ligeros","Light bites"],["k","Niños","Kids"],["d","Postres","Desserts"],["b","Bebidas","Drinks"],["a","Adiciones","Extras"]];
+const N={d:["Pídelo en croissant 100% mantequilla o waffle de pandebono.","Order it on a 100% butter croissant or a pandebono waffle."],h:["Todas con papas.","All served with fries."],n:["Escoge el pan: mantequilla, orégano o ciabatta. Todos con papas o chips de plátano.","Choose your bread: butter, oregano or ciabatta. All with fries or plantain chips."],l:["Sándwich en croissant 100% mantequilla o focaccia italiana, con papas o chips de plátano.","Sandwich on 100% butter croissant or Italian focaccia, with fries or plantain chips."],k:["La Casita Petite","La Casita Petite"],a:["Arma tu burger o tus papas con las adiciones que más te gusten.","Build your burger or fries with the extras you like most."]};
+const U={r:["Recomendada","Recommended"],e:["Especial","Special"],pan:["Pollo","Chicken"],res:["Res Angus","Angus beef"],sal:["Salmón","Salmon"],ft:["Precios en miles de pesos colombianos.","Prices in thousands of Colombian pesos."]};
+const D={"salsa de la casa":"house sauce","pan focaccia":"focaccia bread","aceite de oliva":"olive oil","vinagre balsámico":"balsamic vinegar","queso cheddar":"cheddar cheese","tocineta":"bacon","salsa de quesos con champiñones":"cheese and mushroom sauce","Angus Beef":"Angus beef","papa a la francesa":"french fries","pollo empanizado":"breaded chicken","proteína":"protein","queso americano":"American cheese","cebolla morada":"red onion","pan mantequilla":"butter bun","mayonesa artesanal":"house mayo","papas":"fries","lechuga":"lettuce","tomate":"tomato","cebolla a la parrilla":"grilled onion","quesos Colby Jack y americano":"Colby Jack and American cheese","queso americano y mozzarella":"American and mozzarella cheese","cebolla caramelizada":"caramelized onion","reducción vino malbec":"Malbec wine reduction","chorizo argentino":"Argentine chorizo","pimentones asados":"roasted peppers","queso holandés":"Gouda cheese","piña asada":"grilled pineapple","queso asado":"grilled cheese","guacamole":"guacamole","queso Colby Jack":"Colby Jack cheese","cebolla crispy":"crispy onion","pepinillos":"pickles","2 portobellos":"2 portobellos","huevo":"egg","queso mozzarella":"mozzarella cheese","tocineta ahumada":"smoked bacon","tocineta caramelizada":"caramelized bacon","pollo desmechado":"shredded chicken","jamón serrano":"serrano ham","tomates secos":"sun-dried tomatoes","pesto":"pesto","pollo":"chicken","aguacate":"avocado","portobello":"portobello","cebolla":"onion","croissant 100% mantequilla o focaccia":"100% butter croissant or focaccia","papas o chips de plátano":"fries or plantain chips","3 mini burgers de 25 g":"3 mini burgers, 25 g each","Angus Beef y queso americano":"Angus beef with American cheese","Angus Beef y tocineta ahumada":"Angus beef with smoked bacon","Angus Beef y cebolla caramelizada":"Angus beef with caramelized onion","papas a la francesa":"french fries","jugo en cajita o té Hatsu":"juice box or Hatsu tea","juguete":"toy","vegetales a elección (lechuga, tomate, cebolla)":"your choice of veggies (lettuce, tomato, onion)",
+"Tocineta caramelizada":"Caramelized bacon","Tocineta ahumada":"Smoked bacon","Certified Angus Beef 90 g":"Certified Angus beef 90 g","Certified Angus Beef 150 g":"Certified Angus beef 150 g","Chorizo argentino":"Argentine chorizo","Huevo":"Egg","Portobello":"Portobello","Pollo apanado":"Breaded chicken","Cebolla caramelizada":"Caramelized onion","Cebolla crispy":"Crispy onion","Aros de cebolla apanados":"Breaded onion rings","Jalapeños":"Jalapeños","Pepinillos":"Pickles","Piña asada":"Grilled pineapple","Aguacate":"Avocado","Queso Colby Jack":"Colby Jack cheese","Queso holandés":"Gouda cheese","Queso mozzarella":"Mozzarella cheese","Queso americano":"American cheese","Queso asado":"Grilled cheese","Salsa mayo chipotle":"Chipotle mayo","Salsa de la casa":"House sauce","Salsa de queso cheddar":"Cheddar cheese sauce","Salsa sriracha":"Sriracha sauce","Pesto":"Pesto","Salsa de quesos con champiñones":"Cheese and mushroom sauce","Proteínas":"Proteins","Vegetales":"Veggies","Quesos":"Cheeses","Salsas":"Sauces"};
+const tr=(s,l)=>{if(l=="es")return s;if(D[s])return D[s];const m=s.match(/^(\d+) g de (.+)$/);return m?m[1]+" g "+(D[m[2]]||m[2]):s};
+// c=categoría, s=subtítulo, n=nombre, e=nombre EN, i=ingredientes, p=precio, t=etiqueta
+const I=[];const add=(c,s,n,e,i,p,t)=>I.push({k:I.length,c,s,n,e,i:i.split("|"),p,t});
+add("e","","Chips de plátano","Plantain chips","salsa de la casa","5,9");
+add("e","","Panecillos de focaccia","Focaccia bites","pan focaccia|aceite de oliva|vinagre balsámico","9,9");
+add("e","","Papas Monarcas","Monarcas fries","150 g de papa a la francesa|queso cheddar|tocineta","15,9");
+add("e","","Papas Franquesas","Franquesas fries","150 g de papa a la francesa|salsa de quesos con champiñones|tocineta|Angus Beef","22,9");
+add("e","","Papas francesas","French fries","salsa de la casa","7,9");
+add("e","","Papas rústicas en casco","Rustic wedge fries","salsa de la casa","8,9");
+const A90="Angus 90 g + papas|Angus 90 g + fries",A150="Angus 150 g + papas|Angus 150 g + fries",ES="Especiales|Specials",A300="Angus 300 g + papas|Angus 300 g + fries";
+add("h",A90,"Ilustre","","90 g de Angus Beef|queso americano|cebolla morada|pan mantequilla|mayonesa artesanal|papas","18,9*");
+add("h",A90,"Ligera","","90 g de Angus Beef|queso americano|lechuga|tomate|cebolla a la parrilla|salsa de la casa|papas","24,9");
+add("h",A90,"Heredera","","90 g de Angus Beef|tocineta|cebolla a la parrilla|tomate|lechuga|pan mantequilla|salsa de la casa|papas","26,9");
+add("h",A150,"Clásica","Classic","150 g de Angus Beef|queso americano|lechuga|tomate|cebolla a la parrilla|pan mantequilla|salsa de la casa|papas","29,9");
+add("h",A150,"Cheese'n Bacon","","150 g de Angus Beef|quesos Colby Jack y americano|tocineta|cebolla a la parrilla|pan mantequilla|salsa de la casa|papas","35,9","r");
+add("h",A150,"De la casa","The house burger","150 g de Angus Beef|tocineta|queso americano y mozzarella|cebolla caramelizada|lechuga|tomate|pan mantequilla|salsa de la casa|papas","36,9","r");
+add("h",ES,"Madame Malbec","","150 g de Angus Beef|reducción vino malbec|chorizo argentino|cebolla caramelizada|pimentones asados|queso holandés|pan mantequilla|salsa de la casa|papas","39,9","e");
+add("h",ES,"Queen Master","","150 g de Angus Beef|tocineta|cebolla morada|piña asada|queso asado|pan mantequilla|salsa de la casa|papas","38,9","e");
+add("h",ES,"Real Avocado","","150 g de Angus Beef|guacamole|tocineta|queso Colby Jack|cebolla a la parrilla|pan mantequilla|salsa de la casa|papas","38,9","e");
+add("h",ES,"Regal Gouda","","150 g de Angus Beef|tocineta|queso holandés|cebolla crispy|pepinillos|pan mantequilla|salsa de la casa|papas","38,9","e");
+add("h",A300,"Grand Double Angus","","300 g de Angus Beef|tocineta|queso americano y mozzarella|cebolla a la parrilla|lechuga|tomate|pan mantequilla|salsa de la casa|papas","49,9");
+add("p","","Bistecca Bianca","","100 g de pollo empanizado|cebolla a la parrilla|tomate|lechuga|pan mantequilla|salsa de la casa|papas","23,9");
+add("p","","Bistecca Gouda","","200 g de pollo empanizado|cebolla a la parrilla|queso holandés|cebolla crispy|pepinillos|pan mantequilla|salsa de la casa|papas","34,9");
+add("p","","Grand Veggie Burger","","2 portobellos|huevo|queso americano y mozzarella|cebolla morada|tomate|lechuga|pan mantequilla|salsa de la casa|papas","35,9");
+const PA=a=>a;
+add("n","","Noble","","150 g de proteína|queso americano|tocineta|cebolla a la parrilla|tomate|lechuga|salsa de la casa",["29,9","30,9","32,9"]);
+add("n","","Jack n' Bacon","","150 g de proteína|quesos Colby Jack y americano|tocineta|cebolla a la parrilla|salsa de la casa",["34,9","35,9","37,9"],"r");
+add("n","","Duquesa Avocada","","150 g de proteína|guacamole|tocineta|queso Colby Jack|cebolla a la parrilla|salsa de la casa",["35,9","36,9","38,9"]);
+add("n","","Sir Gouda","","150 g de proteína|tocineta|queso holandés|cebolla crispy|pepinillos|salsa de la casa",["37,9","38,9","40,9"]);
+add("n","","King Master","","150 g de proteína|tocineta|cebolla morada|piña asada|queso asado|salsa de la casa",["37,9","38,9","40,9"]);
+add("n","","De la casa","The house panini","150 g de proteína|tocineta|queso americano y mozzarella|cebolla caramelizada|lechuga|tomate|salsa de la casa",["37,9","38,9","40,9"],"r");
+const CF="croissant 100% mantequilla o focaccia";
+add("l","","Classic","","croissant 100% mantequilla o focaccia|tocineta ahumada|queso mozzarella|lechuga|tomate|salsa de la casa","19,9");
+add("l","","Sweet Chicken","","croissant 100% mantequilla o focaccia|pollo desmechado|piña asada|queso mozzarella|salsa de la casa","22,9");
+add("l","","Gran “Uff”","","croissant 100% mantequilla o focaccia|tocineta caramelizada|queso Colby Jack|lechuga|tomate|salsa de la casa","22,9");
+add("l","","Serrano","","croissant 100% mantequilla o focaccia|jamón serrano|queso mozzarella|tomates secos|pesto","23,9");
+add("l","","Aguacate","Avocado","croissant 100% mantequilla o focaccia|pollo|aguacate|queso americano|cebolla|salsa de la casa","24,9");
+add("l","","Veggie Formaggio","","croissant 100% mantequilla o focaccia|portobello|queso mozzarella|queso Colby Jack|queso americano|lechuga","24,9");
+const K="La Casita Petite|La Casita Petite";
+add("k",K,"Los Tres Mosqueteros","The Three Musketeers","3 mini burgers de 25 g|Angus Beef y queso americano|Angus Beef y tocineta ahumada|Angus Beef y cebolla caramelizada|papas a la francesa|jugo en cajita o té Hatsu|juguete","26,9");
+add("k",K,"Fantasía","Fantasy","100 g de pollo empanizado|queso mozzarella|vegetales a elección (lechuga, tomate, cebolla)|papas a la francesa|jugo en cajita o té Hatsu|juguete","27,9");
+add("k",K,"Magia","Magic","90 g de Angus Beef|queso mozzarella|vegetales a elección (lechuga, tomate, cebolla)|papas a la francesa|jugo en cajita o té Hatsu|juguete","28,9");
+const X=[["Proteínas",[["Tocineta caramelizada","5,9"],["Tocineta ahumada","4,9"],["Certified Angus Beef 90 g","9,9"],["Certified Angus Beef 150 g","14,9"],["Chorizo argentino","11,9"],["Huevo","3,9"],["Portobello","6,9"],["Pollo apanado","10,9"]]],["Vegetales",[["Cebolla caramelizada","4,9"],["Cebolla crispy","5,9"],["Aros de cebolla apanados","5,9"],["Jalapeños","4,9"],["Pepinillos","4,9"],["Piña asada","4,9"],["Aguacate","6,9"]]],["Quesos",[["Queso Colby Jack","5,9"],["Queso holandés","5,9"],["Queso mozzarella","4,9"],["Queso americano","4,9"],["Queso asado","6,9"]]],["Salsas",[["Salsa mayo chipotle","1,9"],["Salsa de la casa","1,9"],["Salsa de queso cheddar","4,9"],["Salsa sriracha","1,9"],["Pesto","2,9"],["Salsa de quesos con champiñones","10,9"]]]];
+
+
+const R=(p,s)=>s.split(",").map(n=>[n.trim(),p]);
+Object.assign(D,{"croissant o waffle de pandebono":"croissant or pandebono waffle","nutella":"Nutella","almendras":"almonds","chocolate Hershey's":"Hershey's chocolate","fresa":"strawberry","leche condensada":"condensed milk","crema chantilly":"whipped cream","arándanos":"blueberries","dulce de mora":"blackberry jam","croissant de mantequilla":"butter croissant","relleno de chocolate y nutella":"filled with chocolate and Nutella","relleno de frosting de queso crema":"cream cheese frosting filling","chocolate blanco":"white chocolate","cake de red velvet":"red velvet cake","waffle triangular":"triangular waffle","bola de helado Popsy":"scoop of Popsy ice cream","2 bolas de helado Popsy":"2 scoops of Popsy ice cream","salsa de arequipe, chocolate o frutos rojos":"dulce de leche, chocolate or red berry sauce","salsa de chocolate, frutos rojos o arequipe":"chocolate, red berry or dulce de leche sauce","syrup de chocolate Hershey's":"Hershey's chocolate syrup","cono de croissant de mantequilla":"butter croissant cone","brownie":"brownie","torta de red velvet, chocolate o zanahoria":"red velvet, chocolate or carrot cake","shot de café Juan Valdez":"shot of Juan Valdez coffee","shot de vino tinto":"shot of red wine","trozos de alfajor":"alfajor pieces","arequipe":"dulce de leche","waffle de pandebono":"pandebono waffle","2 alfajores rellenos de manjar blanco":"2 alfajores filled with manjar blanco","porción de torta red velvet, chocolate o zanahoria":"slice of red velvet, chocolate or carrot cake","porción de cheesecake de frutos rojos o limón":"slice of red berry or lemon cheesecake",
+"ron blanco":"white rum","hierbabuena":"mint","limón":"lime","tequila":"tequila","triple sec":"triple sec","granadina":"grenadine","cerveza Corona":"Corona beer","vodka":"vodka","naranja":"orange","cerveza de jengibre":"ginger beer","whiskey Jack Daniel's":"Jack Daniel's whiskey","Coca-Cola":"Coca-Cola","soda negra":"black soda","clásico tequila sunrise":"classic tequila sunrise","soda":"soda","mango":"mango","albahaca fresca":"fresh basil","jengibre":"ginger","ginger":"ginger ale","piña":"pineapple","maracuyá":"passion fruit","cerezas":"cherries","lulo":"lulo","toque de manzana verde":"a touch of green apple","tradicional mojito sin alcohol":"classic non-alcoholic mojito","tradicional margarita sin alcohol":"classic non-alcoholic margarita","vino de Ginebra Valle y vino portugués":"Ginebra Valle wine and Portuguese wine","cuadritos de piña, mango, fresa, arándanos y limón":"diced pineapple, mango, strawberry, blueberries and lime","pregunta por nuestras botellas disponibles":"ask for our available bottles",
+"Copa de vino nacional":"Glass of wine, domestic","Copa de vino importado":"Glass of wine, imported","Tinto de verano nacional":"Summer red, domestic","Tinto de verano importado":"Summer red, imported","Copa de sangría":"Glass of sangria","Botella de vino":"Bottle of wine","Cerveza Andina":"Andina beer","Cerveza Poker":"Poker beer","Limonada natural":"Natural lemonade","Limonada flor de jamaica":"Hibiscus lemonade","Limonada cerezada":"Cherry lemonade","Botella de agua":"Bottled water","Gaseosa 250 ml":"Soft drink 250 ml","Té Hatsu":"Hatsu tea","Soda Hatsu botella 300 ml":"Hatsu soda bottle 300 ml","Vaso michelado":"Michelada glass","Vino caliente":"Mulled wine","Aromática":"Herbal tea","Café Juan Valdez":"Juan Valdez coffee","Café Juan Valdez en leche":"Juan Valdez coffee with milk","Té chai en agua":"Chai tea with water","Té chai en leche":"Chai tea with milk","Croissant o waffle de pandebono (x2)":"Croissant or pandebono waffle (x2)","Chips de chocolate":"Chocolate chips","Almendras":"Almonds","Bola de helado Popsy":"Scoop of Popsy ice cream","Leche condensada":"Condensed milk","Syrup Hershey's":"Hershey's syrup","Arequipe":"Dulce de leche","Crema chantilly":"Whipped cream","Dulce de mora":"Blackberry jam","Fresa":"Strawberry","Arándanos":"Blueberries","Piña":"Pineapple","Lulo":"Lulo","Frutos amarillos":"Yellow fruits","Frutos rojos":"Red fruits","Jack, el Burgués":"Jack, the Bourgeois","Soda Lulada":"Lulo soda"});
+const CD="Croissants dulces|Sweet croissants",CS="Solo en croissant|Croissant only",CH="Con helado Popsy|With Popsy ice cream",CR="Repostería|Bakery",CB="croissant o waffle de pandebono";
+add("d",CD,"Nutella y almendra","Nutella and almond",CB+"|nutella|almendras","13,9");
+add("d",CD,"Chocolate y fresa","Chocolate and strawberry",CB+"|chocolate Hershey's|fresa","12,9");
+add("d",CD,"Almendras","Almonds",CB+"|almendras|leche condensada","12,9");
+add("d",CD,"Frutos rojos","Red berries",CB+"|crema chantilly|arándanos|fresa|dulce de mora","13,9");
+add("d",CS,"Choconutella","","croissant de mantequilla|relleno de chocolate y nutella","10,9");
+add("d",CS,"Red Velvet","","croissant de mantequilla|relleno de frosting de queso crema|chocolate blanco|cake de red velvet","10,9");
+add("d",CH,"Waffle con helado","Waffle with ice cream","waffle triangular|bola de helado Popsy|salsa de arequipe, chocolate o frutos rojos","8,9");
+add("d",CH,"Croissant chocolate con helado","Chocolate croissant with ice cream","croissant de mantequilla|syrup de chocolate Hershey's|bola de helado Popsy","15,9");
+add("d",CH,"Cono de croissant","Croissant cone","cono de croissant de mantequilla|bola de helado Popsy|salsa de chocolate, frutos rojos o arequipe","9,9");
+add("d",CH,"Brownie con helado","Brownie with ice cream","brownie|bola de helado Popsy","13,9");
+add("d",CH,"Torta con helado","Cake with ice cream","torta de red velvet, chocolate o zanahoria|bola de helado Popsy","16,9");
+add("d",CH,"Affogato","","2 bolas de helado Popsy|shot de café Juan Valdez","15,9");
+add("d",CH,"Wine Cream","","2 bolas de helado Popsy|shot de vino tinto","16,9");
+add("d",CH,"Alfajor n' Cream","","2 bolas de helado Popsy|trozos de alfajor|arequipe","16,9");
+add("d",CR,"Waffle pandebono","Pandebono waffle","waffle de pandebono|salsa de arequipe, chocolate o frutos rojos","4,5");
+add("d",CR,"Alfajores","","2 alfajores rellenos de manjar blanco","4,9");
+add("d",CR,"Brownie","","brownie","5,9");
+add("d",CR,"Tortas","Cakes","porción de torta red velvet, chocolate o zanahoria","12,9");
+add("d",CR,"Cheesecake","","porción de cheesecake de frutos rojos o limón","13,9");
+const GD=[["Arma tu postre: base|Build your dessert: base","Escoge una base y luego tus adiciones.|Pick a base, then your extras.",[["Croissant o waffle de pandebono (x2)","7,9"]]],["Frutas|Fruit","",R("1,9","Fresa,Arándanos,Piña,Mango,Lulo")],["Toppings|Toppings","",[["Chips de chocolate","2,9"],["Almendras","2,9"],["Queso mozzarella","4,9"],["Bola de helado Popsy","6,9"]]],["Salsas|Sauces","",R("2,9","Leche condensada,Syrup Hershey's,Nutella,Arequipe,Dulce de mora,Crema chantilly")]];
+const GB=[
+["Sodas de autor|Signature sodas","",[["Nojito","13,9","tradicional mojito sin alcohol|hierbabuena|limón|soda"],["Citrus Mango","17,9","limón|mango|soda"],["La Maison","15,9","limón|naranja|granadina|fresa|soda"],["Queen Margara","16,9","tradicional margarita sin alcohol|limón|naranja|soda"],["Ginger Julep","13,9","albahaca fresca|jengibre|limón|ginger"],["Frutos amarillos","17,9","piña|mango|maracuyá|soda"],["Frutos rojos","17,9","fresa|arándanos|cerezas|soda"],["Soda Lulada","16,9","lulo|toque de manzana verde|soda"]]],
+["Cocteles|Cocktails","2x1 en todos nuestros cocteles: lunes, martes y miércoles, todo el día.|2-for-1 on all our cocktails: Monday, Tuesday and Wednesday, all day.",[["Mojito","19,9","ron blanco|hierbabuena|limón"],["Margarita","21,9","tequila|triple sec|limón|granadina"],["Corona Sunset","22,9","cerveza Corona|vodka|limón|naranja|granadina"],["Moscow Mule","24,9","cerveza de jengibre|vodka|limón|hierbabuena"],["Jack n' Coke","24,9","whiskey Jack Daniel's|Coca-Cola"],["Tequila Sunset","24,9","clásico tequila sunrise|naranja|limón|granadina"],["Jack, el Burgués","25,9","whiskey Jack Daniel's|naranja|limón|soda negra"],["Jabali Monster","28,9","whiskey Jack Daniel's|tequila|ron blanco|granadina|limón"]]],
+["Shots|Shots","",[["Jack Daniel's","18,9"],["Buchanan's","29,9"],["Jimador","17,9"],["Ron blanco","15,9"]]],
+["Vinos|Wines","",[["Copa de vino nacional","11,9"],["Copa de vino importado","13,9"],["Tinto de verano nacional","13,9"],["Tinto de verano importado","15,9"],["Copa de sangría","18,9","vino de Ginebra Valle y vino portugués|cuadritos de piña, mango, fresa, arándanos y limón"],["Botella de vino","","pregunta por nuestras botellas disponibles"],["Smirnoff Ice Original","13,9"],["Smirnoff Ice Green Apple","13,9"]]],
+["Cervezas nacionales|Domestic beers","",[["Cerveza Andina","4,9"],["Cerveza Poker","6,5"],["Club Colombia Dorada","6,9"],["Club Colombia Trigo","7,9"],["Tres Cordilleras","10,9"],["BBC","11,9"]]],
+["Cervezas importadas|Imported beers","",R("9,9","Corona,Heineken,Stella Artois,Tecate,Miller Lite,Michelob Ultra").concat(R("15,9","Estrella Damm Barcelona,Mahou Madrid,Cusqueña,Peroni Italiana,Modelo,Asahi Super Dry Japan"))],
+["Cervezas premium|Premium beers","",R("16,9","Estrella Galicia,1906,Czechvar,Weidman,Bitburger,Singha Thailand").concat([["Paulaner","27,9"],["Erdinger","30,9"],["La Chouffe","30,9"]])],
+["Otras bebidas|Other drinks","",[["Limonada natural","7,9"],["Limonada flor de jamaica","9,9"],["Limonada cerezada","10,9"],["Botella de agua","4,9"],["Bretaña","6,5"],["Gaseosa 250 ml","4,9"],["Coca-Cola 400 ml","6,5"],["Pepsi 400 ml","6,5"],["Colombiana 400 ml","6,5"],["7up 400 ml","6,5"],["Manzana 400 ml","6,5"],["Té Hatsu","6,9"],["Soda Hatsu botella 300 ml","6,5"],["Ginger","6,5"],["Vaso michelado","2,9"]]],
+["Bebidas calientes|Hot drinks","",[["Vino caliente","13,9"],["Aromática","3,9"],["Café Juan Valdez","5,9"],["Café Juan Valdez en leche","7,9"],["Té chai en agua","7,9"],["Té chai en leche","9,9"]]]];
+
+let L="es",F="all";try{L=localStorage.getItem("clbL")||((navigator.language||"").slice(0,2)=="en"?"en":"es")}catch(e){}
+const slug=n=>n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const li=L=>L=="en"?1:0;
+const TC={"bistecca-bianca":"#99612e","bistecca-gouda":"#a33c11","brownie-con-helado":"#6e4e3e","cheese-n-bacon":"#1f6686","chips-de-platano":"#ce9644","choconutella":"#015274","clasica":"#e8902c","classic":"#e6cfa6","de-la-casa-panini":"#85451a","de-la-casa":"#f3b84e","duquesa-avocada-panini":"#5b2610","fantasia":"#d3752d","grand-double-angus":"#065876","grand-veggie-burger":"#9c5720","heredera":"#014c77","ilustre":"#05587d","jack-n-bacon-panini":"#985326","king-master-panini":"#9f5423","ligera":"#095e85","los-tres-mosqueteros":"#b36322","madame-malbec":"#c47632","magia":"#a76d35","noble-panini":"#a15a23","panecillos-de-focaccia":"#bba37e","papas-francesas":"#ac8551","papas-franquesas":"#cfb78a","papas-monarcas":"#e1cfad","papas-rusticas-en-casco":"#af8856","queen-master":"#a25722","real-avocado":"#f2b636","regal-gouda":"#ac6626","serrano":"#144b62","sir-gouda-panini":"#cc8a43","sweet-chicken":"#88441a","tortas":"#44271f"};F="e";let V=false,rail=null,raf=0,act=0;
+const RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+const nmOf=x=>L=="en"&&x.e?x.e:x.n;
+const dsOf=x=>x.i.map(t=>tr(t,L)).join(" • ");
+const prOf=x=>Array.isArray(x.p)?`<div class="pr m">${[U.pan,U.res,U.sal].map((u,k)=>`<span><small>${u[li(L)]}</small>$${x.p[k]}</span>`).join("")}</div>`:`<div class="pr">$${x.p}</div>`;
+const sg=x=>slug(x.n+(x.c=="n"?" panini":""));
+const phOf=x=>`<div class="ph"><b>CLB</b><img src="fotos/${sg(x)}.jpg" alt="${nmOf(x)}" loading="lazy" onerror="this.remove()"></div>`;
+const tg=x=>x.t?`<span class="tag">${U[x.t][li(L)]}</span>`:"";
+const gcard=x=>`<article class="gc" tabindex="0" data-k="${x.k}" style="--tc:${TC[sg(x)]||"#7fa6e8"}">${phOf(x)}<div class="tx">${x.s?`<div class="sub">${x.s.split("|")[li(L)]}</div>`:""}<h4>${nmOf(x)}</h4>${tg(x)}<p>${dsOf(x)}</p>${prOf(x)}</div></article>`;
+const rows=g=>g[2].map(r=>`<div><span>${tr(r[0],L)}${r[2]?`<small>${r[2].split("|").map(t=>tr(t,L)).join(", ")}</small>`:""}</span>${r[1]?`<em>$${r[1]}</em>`:""}</div>`).join("");
+const gp=g=>`<section class="gp"><h3>${g[0].split("|")[li(L)]}</h3>${g[1]?`<p class="note">${g[1].split("|")[li(L)]}</p>`:""}<div class="ex">${rows(g)}</div></section>`;
+const xp=g=>gp([g[0]+"|"+tr(g[0],"en"),"",g[1]]);
+function layout(){
+  if(!rail)return;const cs=rail.querySelectorAll(".gc");if(!cs.length)return;
+  const grid=rail.classList.contains("grid"),mid=rail.clientWidth/2+rail.scrollLeft;let b=0,bd=1e9;
+  cs.forEach((c,i)=>{const d=(c.offsetLeft+c.offsetWidth/2-mid)/c.offsetWidth,a=Math.abs(d);if(a<bd){bd=a;b=i}
+    if(grid){c.style.transform="";c.style.opacity="";return}
+    c.style.transform=`translateZ(${-70*Math.min(a,1)}px) rotateY(${RM?0:-Math.max(-1,Math.min(1,d))*34}deg) scale(${1-.1*Math.min(a,1.3)})`;
+    c.style.opacity=1-.3*Math.min(a,1.2)});
+  act=b;const n=document.getElementById("cn");if(n)n.textContent=(b+1)+" / "+cs.length;
+}
+function go(d){const cs=rail.querySelectorAll(".gc"),c=cs[Math.max(0,Math.min(cs.length-1,act+d))];rail.scrollTo({left:c.offsetLeft+c.offsetWidth/2-rail.clientWidth/2,behavior:RM?"auto":"smooth"})}
+function draw(){
+  document.documentElement.lang=L;document.body.dataset.c=F;
+  const nav=document.getElementById("nav");
+  nav.innerHTML=C.slice(1).map(k=>`<button data-c="${k[0]}" class="${k[0]==F?"on":""}">${k[li(L)+1]}</button>`).join("");
+  const on=nav.querySelector(".on");if(on)nav.scrollTo({left:on.offsetLeft-nav.clientWidth/2+on.offsetWidth/2});
+  let h=`<div class="hd2"><h1>${C.find(k=>k[0]==F)[li(L)+1]}</h1>${N[F]?`<p>${N[F][li(L)]}</p>`:""}</div>`;
+  if(F=="b")h+=`<div class="panels">${GB.map(gp).join("")}</div>`;
+  else if(F=="a")h+=`<div class="panels">${X.map(xp).join("")}</div>`;
+  else{h+=`<div class="tools"><button id="vt" class="gl">${V?(L=="en"?"Carousel":"Carrusel"):(L=="en"?"Grid view":"Cuadrícula")}</button></div><div class="rail${V?" grid":""}" id="rail">${I.filter(x=>x.c==F).map(gcard).join("")}</div><div class="nv"><button class="gl pv" aria-label="${L=="en"?"Previous":"Anterior"}">‹</button><span id="cn"></span><button class="gl nx" aria-label="${L=="en"?"Next":"Siguiente"}">›</button></div>`;if(F=="d")h+=`<div class="panels">${GD.map(gp).join("")}</div>`}
+  document.getElementById("m").innerHTML=h;rail=document.getElementById("rail");
+  if(rail){rail.addEventListener("scroll",()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(layout)},{passive:true});layout()}
+  document.getElementById("ft").textContent=U.ft[li(L)];
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l==L));
+}
+const md=document.getElementById("md");
+function openM(k){const x=I[k];md.innerHTML=`<div class="sh" role="dialog" aria-modal="true" aria-label="${nmOf(x)}" style="--tc:${TC[sg(x)]||"#7fa6e8"}"><button class="x" aria-label="${L=="en"?"Close":"Cerrar"}">×</button>${phOf(x)}<div class="tx">${x.s?`<div class="sub">${x.s.split("|")[li(L)]}</div>`:""}<h4>${nmOf(x)}</h4>${tg(x)}<p>${dsOf(x)}</p>${prOf(x)}</div></div>`;md.hidden=false;document.body.style.overflow="hidden";md.querySelector(".x").focus()}
+function closeM(){md.hidden=true;document.body.style.overflow=""}
+function tap(c){const cs=[...rail.querySelectorAll(".gc")],i=cs.indexOf(c);if(rail.classList.contains("grid")||i==act)openM(c.dataset.k);else go(i-act)}
+md.onclick=e=>{if(e.target==md||e.target.closest(".x"))closeM()};
+document.getElementById("m").onclick=e=>{const c=e.target.closest(".gc");if(c)return tap(c);if(e.target.closest("#vt")){V=!V;draw();return}if(e.target.closest(".pv"))go(-1);if(e.target.closest(".nx"))go(1)};
+document.addEventListener("keydown",e=>{if(e.key=="Escape"&&!md.hidden)closeM();const c=e.target.classList&&e.target.classList.contains("gc")?e.target:null;if(c&&(e.key=="Enter"||e.key==" ")){e.preventDefault();tap(c)}if(c&&rail&&e.key=="ArrowRight"){e.preventDefault();go(1)}if(c&&rail&&e.key=="ArrowLeft"){e.preventDefault();go(-1)}});
+document.getElementById("nav").onclick=e=>{const b=e.target.closest("button");if(!b)return;F=b.dataset.c;draw();window.scrollTo({top:0})};
+document.querySelector(".lang").onclick=e=>{const b=e.target.closest("button");if(!b)return;L=b.dataset.l;try{localStorage.setItem("clbL",L)}catch(x){}draw()};
+window.addEventListener("resize",layout);window.addEventListener("load",layout);
+draw();
+</script>
+</body>
+</html>
